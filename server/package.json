@@ -1,0 +1,31 @@
+{
+  "name": "@saudi-payments/server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Server-owned checkout API for the Saudi payments demo.",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.20.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "mongodb-memory-server": "^10.3.0",
+    "supertest": "^7.1.4",
+    "vitest": "^5.0.5"
+  }
+}

@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+
+  --color-canvas: #faf9f6;
+  --color-surface: #ffffff;
+  --color-ink: #18211d;
+  --color-muted: #55615b;
+  --color-subtle: #65706b;
+  --color-line: #e3e6e2;
+  --color-line-strong: #cdd3cf;
+
+  --color-brand: #143c32;
+  --color-brand-strong: #0d2a23;
+  --color-brand-soft: #edf3f0;
+  --color-brand-line: #cfe0d8;
+  --color-gold: #a37c42;
+
+  --radius-control: 0.625rem;
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background-color: #d8e7e0;
+    color: #0d2a23;
+  }
+
+  :focus-visible {
+    outline: 2px solid #143c32;
+    outline-offset: 2px;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary {
+    list-style: none;
+  }
+}
+
+@layer utilities {
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
